@@ -16,12 +16,28 @@ function updatePlayButton() {
 
 // Update progress 
 function updateProgress() {
-    return true;
+    progress.value = (video.currentTime / video.duration) * 100;
+
+    // Update Timestamp
+    // Minutes
+    let minutes = Math.floor(video.currentTime / 60);
+    if(minutes < 10) {
+        minutes = '0' + minutes;
+    }
+    // Seconds
+    let seconds = Math.floor(video.currentTime % 60);
+    if(seconds < 10) {
+        seconds = '0' + seconds;
+    }
+
+    timestamp.innerHTML = `${minutes}:${seconds}`;
 }
 
 // Set Video Time
 function setVideoProgess(){
-    return true;
+    console.log("selected value:", progress.value)
+    video.currentTime = (+progress.value * video.duration) / 100;
+
 }
 
 // Stop Video

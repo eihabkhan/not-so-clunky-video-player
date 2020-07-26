@@ -35,6 +35,11 @@ video[poster] {
   height: auto;
 }
 
+input[type='range'] {
+  margin: 0 1.25rem;
+  width: 100%;
+}
+
 .controls {
   background: #333;
   color: #fff;
